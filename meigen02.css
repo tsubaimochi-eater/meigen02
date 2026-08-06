@@ -1,0 +1,532 @@
+@charset "utf-8";
+/* 全体 */
+body {
+     /* フォント */
+     font-family: "Kiwi Maru", serif;
+     /* フォントサイズ */
+     font-size: 24px;
+     /* 元々ついていた余白を取りました */
+     margin: 0;
+}
+
+
+
+
+.hero {
+     /* トップ画面を横幅いっぱいに設定しました */
+     width: 100%;
+     /* トップ画面の高さをいっぱいに設定しました */
+     height: 100vh;
+     /* タイトル文字の位置の基準を決めました */
+     position: relative;
+     /* 画像のはみ出す部分を表示させないようにしました */
+     overflow: hidden;
+}
+
+.hero img {
+     /* タイトル画像の横幅 */
+     width: 100%;
+     /* タイトル画像の高さ */
+     height: 100%;
+     /* 画像の比率をそのままに枠いっぱいに広げました */
+     object-fit: cover;
+     /* 画面の奥行きの一番奥に設定しました */
+     z-index: 0;
+}
+
+.hero strong {
+     /* タイトル文字を画面中央に設定しました */
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     /* 奥行きを画像の一つ手前に設定しました */
+     z-index: 1;
+     /* 文字色 */
+     color: rgb(247, 239, 229);
+     /* 文字の大きさ */
+     font-size: 80px;
+     /* 文字に影をつけました */
+     text-shadow: 6px 6px 6px#333333;
+
+}
+
+@media screen and (max-width: 1200px) {
+    .hero strong {
+        /* タイトル文字の大きさ */
+        font-size: 24px;
+    }
+    
+}
+
+
+
+
+/* ナビゲーション */
+nav {
+     /* ロゴとナビゲーションの項目を横並びにしました */
+     display: flex;
+     /* ロゴとナビゲーションを両極端に配置しました */
+     justify-content: space-between;
+     /* 交差軸の方向に中央揃えにしました */
+     align-items: center;
+     /* ロゴとナビゲーションを上部に固定しました */
+     position: fixed;
+     top: 0;
+     /* ロゴとナビゲーションの横幅を設定しました */
+     width: 100%;
+}
+
+/* 左上のロゴ */
+.header-logo img {
+     /* ロゴのサイズ */
+     width: 80px;
+     height: 80px;
+}
+
+/* ul(ナビゲーション) */
+.navlist {
+     /* ナビゲーションの項目を横並びにしました */
+     display: flex;
+     /* 並び方を設定しました */
+     justify-content: flex-end;
+
+}
+
+/* ナビゲーションの項目 */
+.navitem {
+     /* 箇条書きの最初の点を消しました */
+     list-style: none;
+}
+
+/* ナビゲーションのリンク */
+.navitem a {
+     /* 下線をとりました */
+     text-decoration: none;
+     /* 文字色 */
+     color: #333333;
+     /* 背景色 */
+     background-color: rgba(250, 235, 215, 0.702);
+     /* 文字の太さ */
+     font-weight: bold;
+     /* 文字に余白を持たせました */
+     padding: 16px;
+     /* 下線を透明に設定しました */
+     border-bottom: 2px solid transparent;
+     /* 時間差で下線が現れるまでの時間指定 */
+     transition: .6s;
+}
+
+/* ナビゲーションのリンクのカーソルを当てた時 */
+.navitem a:hover {
+     /* カーソルを当てた時の文字色 */
+     color: rgb(137, 8, 8);
+     /* 時間差で現れる下線の色 */
+     border-bottom: 2px solid rgb(137, 8, 8);
+     
+}
+
+@media screen and (max-width: 1200px) {
+    .navlist {
+     margin: 0;
+     padding: 0;
+    }
+    
+    
+     .navitem a {
+        /* フォントの比率を変えました */
+        font-size: 50%;
+        /* 余白を無くしました */
+        margin: 0;
+        padding: 10px;
+    }    
+    
+    .header-logo img {
+        /* ロゴマークのサイズを変えました */
+        width: 40px;
+    }
+}
+
+
+
+
+
+/* 見出し */
+.headline {
+     /* フォントサイズ */
+     font-weight: bold;
+     /* 中央揃え */
+     text-align: center;
+     /* 元々の余白を取りました */
+     margin: 0;
+     /* 要素の上下に余白を持たせました */
+     padding: 40px 0;
+}
+
+/* About */
+.about {
+     /* Aboutの背景色 */
+     background-color: rgba(240, 209, 227, 0.736);
+}
+
+.aboutfigure {
+     /* 記事と画像を横並びにしました */
+     display: flex;
+     /* 中央揃え */
+     align-items: center;
+     /* 元々の余白を取りました */
+     margin: 0;
+
+}
+
+.aboutfigcaption {
+     /* 文章の左に余白を持たせることで画像との距離をあけました */
+     padding-left: 30px;
+}
+
+.aboutfigure img {
+     /* 画像の横幅を設定しました */
+     width: 50%;
+     /* 画像の余白を調整しました */
+     padding: 0 0 40px 40px;
+}
+
+@media screen and (max-width: 1200px) {
+    .aboutfigure {
+        /* 画像と文字の横並びを解除しました */
+        display: block;
+    }    
+    .aboutfigure img {
+        /* 画像の横幅の比率を変えました */
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+
+
+/* Articles */
+.figure-left {
+     /* 記事と画像を横並びにしました */
+     display: flex;
+     /* 並び方の配置を変えました */
+     flex-direction: row-reverse;
+     /* 中央揃えにしました */
+     align-items: center;
+
+
+}
+
+.figure-right {
+     /* 記事と画像を横並びにしました */
+     display: flex;
+     /* 中央揃えにしました */
+     align-items: center;
+
+}
+
+.figure-left img,
+.figure-right img {
+     /* 画像の幅を設定しました */
+     width: 50%;
+}
+
+blockquote {
+     /* 記事の元々の余白を取りました */
+     margin: 0;
+
+}
+
+figcaption {
+     /* 記事全体の左右に余白を持たせました */
+     padding: 0 40px;
+}
+
+@media screen and (max-width: 1200px) {
+    .figure-right,
+    .figure-left {
+        /* 画像と文章の横並びを解除しました */
+        display: block;
+        margin: 0;
+    }
+    .figure-right img,
+    .figure-left img {
+        /* 画像の横幅の比率を変えました */
+        width: 100%;
+    }
+    blockquote {
+        /* もともとついていた余白を取りました */
+        margin: 0;
+    }
+    
+
+}
+
+
+
+
+
+/* Authores */
+.authors {
+     /* 背景色 */
+     background-color: rgba(240, 209, 227, 0.736);
+     /* 記事の終わりに余白を持たせました */
+     padding-bottom: 40px;
+}
+
+table {
+     /* 表の枠線を一重にしました */
+     border-collapse: collapse;
+     /* 表を中央に配置しました */
+     margin: 0 auto;
+     
+}
+
+th,td {
+     /* 表の内部に余白を持たせました */
+     padding: 12px;
+}
+
+td a {
+     /* 表のリンクの文字色 */
+     color: #333333;
+     /* リンクの下線を取りました */
+     text-decoration: none;
+     /* 下線を透明に設定しました */
+     border-bottom: 2px solid transparent;
+     /* 時間差で現れる下線の時間を設定しました */
+     transition: .6s;
+}
+
+td a:hover {
+     /* リンクにカーソルを当てた時の文字色 */
+     color: rgb(137, 8, 8);
+     /* 時間差で現れる下線の色 */
+     border-bottom: 2px solid rgb(137, 8, 8);
+}
+
+@media screen and (max-width: 1200px) {
+    table {
+        /* 表の横幅の比率を変えました */
+        width: 90%;
+        /* 表の文字の大きさ */
+        font-size: 12px;
+    }
+    
+}
+
+
+
+
+
+/* アンケート */
+.surveys {
+     /* 背景色 */
+     background-color: rgba(244, 8, 129, 0.593);
+}
+
+.form-row {
+     /* 質問と記入欄を横並びにしました */
+     display: flex;
+     /* 交差軸の方向に中央揃えしました */
+     align-items: center;
+}
+
+.form-title {
+     /* 質問の項目の幅を設定しました */
+     width: 300px;
+}
+
+.input,
+.checkbox-group,
+select,
+textarea {
+     /* 選択肢や入力欄の幅を設定しました */
+     width: 300px;
+}
+
+textarea {
+     /* ご意見の入力欄の最低の高さを設定しました */
+     min-height: 100px;
+}
+
+
+.form-button {
+     /* 送信ボタンを中央に持ってきました */
+     text-align: center;
+     /* 送信ボタンの上下に余白を設けました */
+     padding: 40px 0;
+}
+
+.form-inner {
+     /* フォーム全体の幅を設定しました */
+     width: 60%;
+     /* フォーム全体を中央揃えにしました */
+     margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .form-row {
+        /* フォームの項目と入力欄の横並びを解除しました */
+        display: block;
+    }
+    
+    .input,
+    .checkbox-group,
+    select,
+    textarea {
+        /* 入力欄の横幅の比率を変えました */
+        width: 100%;
+    }
+    
+     .googleform iframe {
+     padding: 0;
+    }
+    
+}
+
+
+
+
+/* 出典 */
+.aside {
+     /* 箇条書きの最初の点を消しました */
+     list-style: none;
+}
+
+/* Links */
+
+.links {
+     /* Linksの背景色 */
+     background-color: rgba(242, 226, 203, 0.726);
+}
+
+.link-container {
+     /* 要素をフレックスボックスにしました */
+     display: flex;
+     /* 要素を縦並びにしました */
+     flex-direction: column;
+     /* リンクを中央揃えにしました */
+     align-items: center;
+}
+
+.link-items {
+     /* リンクの文字色 */
+     color: #333333;
+     /* リンクの下線を取りました */
+     text-decoration: none;
+     /* 下線を透明に設定しました */
+     border-bottom: 2px solid transparent;
+     /* 時間差で下線が現れるまでの時間 */
+     transition: .4s;
+}
+
+.link-items:hover {
+     /* リンクにカーソルを当てた時の文字色 */
+     color: rgb(122, 7, 7);
+     /* リンクにカーソルを当てた時に時間差で出てくる下線の色 */
+     border-bottom: 2px solid rgb(122, 7, 7);
+}
+
+
+/* フッター */
+.contacts {
+     /* フッターの背景色 */
+     background-color: rgba(240, 209, 227, 0.736);
+}
+
+.footer-figure {
+     /* 地図と住所等の文字を横並びにしました */
+     display: flex;
+     /* 文字を中央揃えにしました */
+     align-items: center;
+     /* もともとついていた余白を消しました */
+     margin: 0;
+}
+
+
+.footer-logo {
+     /* ロゴと社名を横並びにしました */
+     display: flex;
+     /* 社名を上下中央に揃えました */
+     align-items: center;
+}
+
+address {
+     /* 住所の書体を変えました */
+     font-style: normal;
+}
+
+iframe {
+     /* 地図の余白を調整しました */
+     padding: 40px;
+}
+
+hr {
+     /* もともとついていた余白を消しました */
+     margin: 0;
+}
+
+.footer-small {
+     /* インライン要素を横幅いっぱいの箱に入れました */
+     display: block;
+     /* 文字を中央揃えにしました */
+     text-align: center;
+     /* 文字に余白を持たせました */
+     padding: 20px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .footer-figure {
+        /* 地図と住所の横並びを解除しました */
+        display: block;
+    }
+    .footer-figure iframe {
+        /* 地図の横幅を設定しました */
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+/* トップボタン */
+.top-button a {
+     /* 文字色 */
+     color: #333333;
+     /* 下線を消しました */
+     text-decoration: none;
+     /* 右下に固定しました */
+     position: fixed;
+     right: 0;
+     bottom: 0;
+     /* 文字の背景色 */
+     background-color: rgba(250, 235, 215, 0.702);
+     /* 文字に余白を持たせました */
+     padding: 12px;
+     /* 文字の太さ */
+     font-weight: bold;
+     /* 下線を透明に設定しました */
+     border-bottom: 2px solid transparent;
+     /* 時間差で下線が現れるまでの時間 */
+     transition: .6s;
+}
+
+.top-button a:hover {
+     /* 文字にカーソルを合わせた時の文字色 */
+     color: rgb(137, 8, 8);
+     /* カーソルを合わせた時に時間差で現れる下線の色 */
+     border-bottom: 2px solid rgb(137, 8, 8);
+}
+
+@media screen and (max-width: 1200px) {
+     .top-button a {
+          font-size: 50%;
+     } 
+}
