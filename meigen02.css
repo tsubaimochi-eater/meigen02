@@ -366,6 +366,10 @@ textarea {
      margin: 0 auto;
 }
 
+.googleform iframe {
+     padding: 0;
+    }
+
 
 @media screen and (max-width: 1200px) {
     .form-row {
